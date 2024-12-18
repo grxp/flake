@@ -43,7 +43,7 @@
       defaultFonts = {
         sansSerif = [
           # Main Sans-Serif Font 
-          "lxgw wenkai screen"
+          # "lxgw wenkai screen"
           "Cantarell"
           # CJK Fallback
           "Noto Sans CJK SC"
