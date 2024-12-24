@@ -1,4 +1,4 @@
-{ user, pkgs, ... }:
+{ user, ... }:
 {
   users.users.root.initialHashedPassword = "$y$j9T$pBWWxRVg6x9fa/1cZekGW1$hb.Vg3hwXSat17adx16GhwBdkJaQlKv.iib5pyjO/z1";
   users.users.${user} = {

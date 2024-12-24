@@ -57,7 +57,7 @@
               ./lanzaboote.nix
               ./home-manager.nix
               # generic model for my laptop
-              nixos-hardware.nixosModules.omen-16-n0005ne
+              # nixos-hardware.nixosModules.omen-16-n0005ne
               impermanence.nixosModules.impermanence
               lanzaboote.nixosModules.lanzaboote
               home-manager.nixosModules.home-manager

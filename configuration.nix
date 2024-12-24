@@ -2,23 +2,22 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, nixpkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
     ./modules/sysctl.nix
     ./modules/i18n.nix
-    ./modules/network.nix
     ./modules/ssh.nix
     ./modules/shell.nix
     ./modules/nix.nix
     # modules/features
-    ./modules/features/virtualisation.nix
+    # ./modules/features/virtualisation.nix
     ./packages
     ./packages/gaming.nix
     ./user
   ];
-
+  virtualisation.libvirtd.enable = true;
   # Run unpatched dynamic binaries on NixOS
   programs.nix-ld.enable = true;
 

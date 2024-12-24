@@ -22,9 +22,10 @@
     ./programs/spicetify.nix
     ./programs/git.nix
     ./programs/lazygit.nix
-    ./programs/mangohud.nix
     ./programs/gpg.nix
   ];
+
+  programs.mangohud.enable = true;
   # kitty
   programs.kitty = {
     enable = true;
@@ -36,7 +37,6 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
-  services.syncthing.enable = true;
   programs.java.enable = true;
 
   home.stateVersion = "24.05";

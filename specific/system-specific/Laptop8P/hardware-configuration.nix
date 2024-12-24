@@ -32,9 +32,9 @@
   boot.initrd.luks.devices."lvm-encrypted".device = "/dev/mapper/lvm-lvol0";
 
   fileSystems."/" = {
-    device = "tmpfs";
+    device = "none";
     fsType = "tmpfs";
-    options = [ "mode=755" ];
+    options = [ "defaults" "size=25%" "mode=755" ];
   };
 
   # fileSystems."/root" = {
@@ -46,7 +46,7 @@
   fileSystems."/home" = {
     device = "/dev/mapper/lvm-encrypted";
     fsType = "btrfs";
-    options = [ "subvol=nix-home" "compress=zstd" ];
+    options = [ "subvol=home" "compress=zstd" ];
   };
 
   fileSystems."/nix" = {
@@ -71,18 +71,17 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/D63D-7CB2";
     fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
   };
 
   swapDevices = [
-    {
-      device = "/dev/disk/by-partuuid/ff8fbf43-96b8-4e80-8db7-d1f202a5b464";
-      randomEncryption = {
-        enable = true;
-        allowDiscards = true;
-      };
-      discardPolicy = "both";
-    }
+    # {
+    #   device = "/dev/disk/by-partuuid/ff8fbf43-96b8-4e80-8db7-d1f202a5b464";
+    #   randomEncryption = {
+    #     enable = true;
+    #     allowDiscards = true;
+    #   };
+    #   discardPolicy = "both";
+    # }
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
