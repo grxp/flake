@@ -6,8 +6,8 @@
       "/etc/daed"
       "/etc/secureboot"
       "/etc/nixos"
-      # "/var/log"
-      # "/var/lib"
+      "/var/log"
+      "/var/lib"
     ];
     files = [
       "/etc/machine-id"
