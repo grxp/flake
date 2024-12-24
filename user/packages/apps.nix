@@ -10,7 +10,7 @@
     qq
     wechat-uos
     thunderbird
-    yesplaymusic
+    netease-cloud-music-gtk
     vlc
     (mpv-unwrapped.wrapper { mpv = mpv-unwrapped.override { cddaSupport = true; }; })
     tsukimi
