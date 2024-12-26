@@ -20,8 +20,8 @@
 
   security.tpm2.enable = true;
   security.tpm2.pkcs11.enable = true;
-  security.tpm2.pkcs11.package =
-    pkgs.tpm2-pkcs11.override { abrmdSupport = false; }; # Using Kernel RM
+  # security.tpm2.pkcs11.package =
+  #   pkgs.tpm2-pkcs11.override { abrmdSupport = false; }; # Using Kernel RM
   security.tpm2.tctiEnvironment.enable = true;
 
   environment.systemPackages = with pkgs; [

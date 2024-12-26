@@ -14,7 +14,7 @@
     vlc
     (mpv-unwrapped.wrapper { mpv = mpv-unwrapped.override { cddaSupport = true; }; })
     tsukimi
-    bottles
+    # bottles
     obsidian
     wpsoffice-cn
     virt-manager

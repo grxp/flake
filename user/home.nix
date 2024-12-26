@@ -17,7 +17,7 @@
     ./programs/firefox.nix
     ./programs/shell.nix
     ./programs/vscode.nix
-    ./programs/jetbrains.nix
+    # ./programs/jetbrains.nix
     ./programs/obs-studio.nix
     ./programs/spicetify.nix
     ./programs/git.nix

@@ -3,7 +3,7 @@
   programs.fish.interactiveShellInit = ''
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
   '';
-  programs.nushell.enable = true;
+  # programs.nushell.enable = true;
 
   programs.fzf.enable = true;
   programs.zoxide.enable = true;
