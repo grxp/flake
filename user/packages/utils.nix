@@ -5,8 +5,6 @@
     btop
     nvtopPackages.full
     lolcat
-    bat
-    lsd
     difftastic
     yazi
     nali
