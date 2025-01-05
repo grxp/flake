@@ -4,10 +4,10 @@
     directories = [
       "/etc/NetworkManager/system-connections"
       "/etc/daed"
-      "/etc/secureboot"
       "/etc/nixos"
       "/var/log"
       "/var/lib"
+      "/var/lib/sbctl"
     ];
     files = [
       "/etc/machine-id"

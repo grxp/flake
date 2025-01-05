@@ -20,8 +20,8 @@
 
   security.tpm2.enable = true;
   security.tpm2.pkcs11.enable = true;
-  # security.tpm2.pkcs11.package =
-  #   pkgs.tpm2-pkcs11.override { abrmdSupport = false; }; # Using Kernel RM
+  security.tpm2.pkcs11.package =
+    pkgs.tpm2-pkcs11.override { abrmdSupport = false; }; # Using Kernel RM
   security.tpm2.tctiEnvironment.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -37,7 +37,7 @@
     options = [ "defaults" "size=25%" "mode=755" ];
   };
 
-  # fileSystems."/root" = {
+  # fileSystems."/" = {
   #   device = "/dev/mapper/lvm-encrypted";
   #   fsType = "btrfs";
   #   options = [ "subvol=root" "compress=zstd" ];
@@ -58,7 +58,7 @@
   fileSystems."/persistent" = {
     device = "/dev/mapper/lvm-encrypted";
     fsType = "btrfs";
-    options = [ "subvol=persistent" "compress=zstd" ];
+    options = [ "subvol=root" "compress=zstd" ];
     neededForBoot = true;
   };
 

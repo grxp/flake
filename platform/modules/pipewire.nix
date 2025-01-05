@@ -17,7 +17,7 @@
       # jack.enable = true;
     };
 
-    hardware.pulseaudio.enable = false;
+    services.pulseaudio.enable = false;
   } // lib.optionalAttrs (options ? "home-manager") {
     home-manager.users.${user}.xdg.configFile."wireplumber/wireplumber.conf.d/51-disable-suspension.conf".text = ''monitor.alsa.rules = [
   {
