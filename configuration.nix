@@ -12,7 +12,6 @@
     ./modules/shell.nix
     ./modules/nix.nix
     # modules/features
-    # ./modules/features/virtualisation.nix
     ./packages
     ./packages/gaming.nix
     ./user
