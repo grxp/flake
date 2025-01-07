@@ -20,9 +20,6 @@
   # Run unpatched dynamic binaries on NixOS
   programs.nix-ld.enable = true;
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.consoleMode = lib.mkDefault "auto";

@@ -1,16 +1,14 @@
-{ lib
-, config
-, ...
-}:
 {
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  networking.networkmanager.wifi.powersave = false; # disabled power save mode for most driver to keep network stable
+  networking.networkmanager.wifi.backend = "iwd"; # Or Default:wpa_supplicant
+
   networking.hostName = "Laptop8P"; # Define hostname.
 
   # Reserve one core to prevent the system from freezing
   nix.settings.cores = 15;
 
-  # Enable tlp power profile mangement
-  # services.tlp.enable = lib.mkDefault ((lib.versionOlder (lib.versions.majorMinor lib.version) "21.05")
-  #   || !config.services.power-profiles-daemon.enable);
   imports = [
     ./plymouth.nix
     ./btrfs-scrub.nix
