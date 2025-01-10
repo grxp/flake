@@ -46,19 +46,19 @@
   fileSystems."/home" = {
     device = "/dev/mapper/lvm-encrypted";
     fsType = "btrfs";
-    options = [ "subvol=home" "compress=zstd" ];
+    options = [ "subvol=home" "compress=zstd" "discard=async" ];
   };
 
   fileSystems."/nix" = {
     device = "/dev/mapper/lvm-encrypted";
     fsType = "btrfs";
-    options = [ "subvol=nix" "compress=zstd" "noatime" ];
+    options = [ "subvol=nix" "compress=zstd" "noatime" "discard=async" ];
   };
 
   fileSystems."/persistent" = {
     device = "/dev/mapper/lvm-encrypted";
     fsType = "btrfs";
-    options = [ "subvol=root" "compress=zstd" ];
+    options = [ "subvol=root" "compress=zstd" "discard=async" ];
     neededForBoot = true;
   };
 

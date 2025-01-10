@@ -17,6 +17,8 @@
     ./user
   ];
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
+
   # Run unpatched dynamic binaries on NixOS
   programs.nix-ld.enable = true;
 
