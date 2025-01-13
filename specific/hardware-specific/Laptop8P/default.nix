@@ -1,4 +1,3 @@
-{ user, ... }:
 {
   imports = [
     # useing nixos-hardware modules to replaced

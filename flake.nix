@@ -38,7 +38,7 @@
 
   outputs = inputs@{ nixpkgs, ... }:
     let
-      user = "DarkAir";
+      user = "darkair";
     in
     {
       nixosConfigurations = {

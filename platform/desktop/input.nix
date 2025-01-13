@@ -1,4 +1,4 @@
-{ pkgs, user, ... }: {
+{
   # Enable Wayland for NixOS 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   # Enable Wayland for Chromium (CEF) Apps using home-manger
