@@ -1,5 +1,4 @@
 { pkgs
-, inputs
 , ...
 }:
 {
@@ -10,7 +9,7 @@
       curlHTTP3
       git
       vim
-      neovim  
+      neovim
       bat
       lsd
       nano

@@ -4,7 +4,7 @@
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
     source ~/.config/fish/conf.d/*.fish
   '';
-  # programs.nushell.enable = true;
+  programs.nushell.enable = true;
 
   programs.fzf.enable = true;
   programs.zoxide.enable = true;
