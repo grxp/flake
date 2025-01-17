@@ -6,18 +6,6 @@ _: {
 
   nixpkgs.overlays = [
     (final: prev: {
-      chromium = prev.chromium.override {
-        commandLineArgs = [
-          "--enable-wayland-ime"
-          "--enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
-        ];
-      };
-      google-chrome = prev.google-chrome.override {
-        commandLineArgs = [
-          "--enable-wayland-ime"
-          "--enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
-        ];
-      };
       brave = prev.brave.override { commandLineArgs = [ "--enable-wayland-ime" ]; };
       vscode = prev.vscode.override { commandLineArgs = [ "--enable-wayland-ime" ]; };
       qq = prev.qq.override { commandLineArgs = [ "--enable-wayland-ime" ]; };

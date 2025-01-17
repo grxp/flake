@@ -1,10 +1,17 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     clash-verge-rev
     android-studio
+    (google-chrome.override {
+      commandLineArgs = [
+        "--enable-features=AcceleratedVideoEncoder,VaapiOnNvidiaGPUs,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
+        "--enable-features=VaapiIgnoreDriverChecks,VaapiVideoDecoder,PlatformHEVCDecoderSupport"
+        "--enable-features=UseMultiPlaneFormatForHardwareVideo"
+        "--ignore-gpu-blocklist"
+        "--enable-zero-copy"
+      ];
+    })
     alacritty
-    google-chrome
     brave
     tdesktop
     qq
@@ -12,7 +19,9 @@
     thunderbird
     netease-cloud-music-gtk
     vlc
-    (mpv-unwrapped.wrapper { mpv = mpv-unwrapped.override { cddaSupport = true; }; })
+    (mpv-unwrapped.wrapper {
+      mpv = mpv-unwrapped.override { cddaSupport = true; };
+    })
     tsukimi
     # bottles
     obsidian

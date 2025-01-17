@@ -7,7 +7,6 @@
       "/etc/nixos"
       "/var/log"
       "/var/lib"
-      "/var/lib/sbctl"
     ];
     files = [
       "/etc/machine-id"
