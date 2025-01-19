@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    clash-verge-rev
     android-studio
     (google-chrome.override {
       commandLineArgs = [

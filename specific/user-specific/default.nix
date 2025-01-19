@@ -13,12 +13,11 @@
   #   useRoutingFeatures = "client";
   # };
 
-
   # services.dae =
   #   {
   #     enable = true;
   #     configFile = "/etc/dae";
   #   };
   services.daed.enable = true;
-
+  programs.clash-verge.enable = true;
 }
