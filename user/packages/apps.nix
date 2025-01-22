@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     android-studio
     (google-chrome.override {
@@ -22,9 +23,10 @@
       mpv = mpv-unwrapped.override { cddaSupport = true; };
     })
     tsukimi
-    # bottles
+    bottles
     obsidian
-    wpsoffice-cn
+    burpsuite
+    # wpsoffice-cn
     virt-manager
     flameshot
     dconf-editor

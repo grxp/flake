@@ -27,6 +27,8 @@
     nodejs
     yarn
     python3
+    # Headers
+    glibc
   ];
   programs.virt-manager.enable = true;
   programs.adb.enable = true;

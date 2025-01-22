@@ -18,9 +18,15 @@
     fd
     ripgrep
     openssl
-    tlrc
+    tldr
+    unzip
+    starship
+    nixfmt-rfc-style
     p7zip
     wine
     winetricks
+    clang-tools
+    any-nix-shell
+    amdgpu_top
   ];
 }

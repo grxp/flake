@@ -10,9 +10,8 @@
   nixpkgs.overlays = [
     (self: super: {
       mutter = super.mutter.overrideAttrs (oldAttrs: {
-        patches = oldAttrs.patches or [ ] ++ [
-          ./wayland-text-input-v1-Implement-basic-text-input-v1-.patch
-        ];
+        patches = oldAttrs.patches or [ ]
+          ++ [ ./wayland-text-input-v1-Implement-basic-text-input-v1-.patch ];
       });
     })
   ];
