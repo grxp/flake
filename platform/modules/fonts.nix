@@ -5,7 +5,7 @@
       # LXGW WenKai Screen
       lxgw-wenkai-screen
       # Cantarell
-      cantarell-fonts
+      # cantarell-fonts
       # Noto Fonts
       noto-fonts
       noto-fonts-color-emoji
@@ -14,16 +14,17 @@
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       # So also install non-variable version
-      source-han-sans
-      source-han-serif
-      source-han-mono
+      # source-han-sans
+      # source-han-serif
+      # source-han-mono
       # Monospace fonts
-      fira-code
-      fira-code-symbols
+      # fira-code
+      # fira-code-symbols
       nerd-fonts.fira-code
-      jetbrains-mono
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.droid-sans-mono
+      cascadia-code
+      # jetbrains-mono
+      # nerd-fonts.jetbrains-mono
+      # nerd-fonts.droid-sans-mono
       # Some unused fonts
       # Inter font
       # inter
@@ -42,9 +43,9 @@
     fontconfig = {
       defaultFonts = {
         sansSerif = [
-          # Main Sans-Serif Font 
-          # "lxgw wenkai screen"
-          "Cantarell"
+          # Main Sans-Serif Font
+          "lxgw wenkai screen"
+          # "Cantarell"
           # CJK Fallback
           "Noto Sans CJK SC"
           "Noto Sans CJK TC"
@@ -66,7 +67,8 @@
         ];
         monospace = [
           # Main Mono Font
-          "JetBrainsMono"
+          "Cascadia Code"
+          # "JetBrainsMono"
           # CJK Fallback
           "Noto Mono CJK SC"
           "Noto Mono CJK TC"
