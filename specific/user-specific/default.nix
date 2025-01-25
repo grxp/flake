@@ -43,5 +43,6 @@
       Restart = "on-abnormal";
     };
   };
+  environment.systemPackages = [ pkgs.daed ];
   programs.clash-verge.enable = true;
 }

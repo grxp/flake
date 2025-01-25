@@ -5,7 +5,7 @@
       # LXGW WenKai Screen
       lxgw-wenkai-screen
       # Cantarell
-      # cantarell-fonts
+      cantarell-fonts
       # Noto Fonts
       noto-fonts
       noto-fonts-color-emoji
@@ -20,10 +20,10 @@
       # Monospace fonts
       # fira-code
       # fira-code-symbols
-      nerd-fonts.fira-code
+      # nerd-fonts.fira-code
       cascadia-code
       # jetbrains-mono
-      # nerd-fonts.jetbrains-mono
+      nerd-fonts.jetbrains-mono
       # nerd-fonts.droid-sans-mono
       # Some unused fonts
       # Inter font
@@ -45,7 +45,7 @@
         sansSerif = [
           # Main Sans-Serif Font
           "lxgw wenkai screen"
-          # "Cantarell"
+          "Cantarell"
           # CJK Fallback
           "Noto Sans CJK SC"
           "Noto Sans CJK TC"
@@ -68,18 +68,17 @@
         monospace = [
           # Main Mono Font
           "Cascadia Code"
-          # "JetBrainsMono"
+          "JetBrainsMono NF"
           # CJK Fallback
-          "Noto Mono CJK SC"
-          "Noto Mono CJK TC"
-          "Noto Mono CJK JP"
-          "Noto Mono CJK KR"
+          "Noto Sans Mono CJK SC"
+          "Noto Sans Mono CJK TC"
+          "Noto Sans Mono CJK JP"
+          "Noto Sans Mono CJK KR"
           # Unicode Fallback
           "DejaVu Sans Mono"
         ];
         emoji = [ "Noto Color Emoji" ];
       };
-
       subpixel.rgba = "rgb";
     };
   };
