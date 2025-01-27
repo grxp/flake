@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   nix.settings = {
     experimental-features = [
@@ -9,8 +10,9 @@
       "@wheel"
     ];
     # Substituters
-    substituters = [
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
+    substituters = lib.mkForce [
+      # "https://mirror.sjtu.edu.cn/nix-channels/store"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://nix-community.cachix.org"
       # "https://cache.garnix.io"
     ];

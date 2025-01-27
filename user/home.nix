@@ -18,7 +18,7 @@
     ./programs/vscode.nix
     # ./programs/jetbrains.nix
     ./programs/obs-studio.nix
-    ./programs/spicetify.nix
+    # ./programs/spicetify.nix
     ./programs/git.nix
     ./programs/lazygit.nix
     ./programs/gpg.nix

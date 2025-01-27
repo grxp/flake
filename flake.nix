@@ -4,6 +4,7 @@
   inputs = {
     # Nix Packages
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable/nixexprs.tar.xz?rev=238b18d7b2c8239f676358634bfb32693d3706f3";
     # Nix Hardware
     nixos-hardware.url = "github:nixos/nixos-hardware";
     # Impermanence
