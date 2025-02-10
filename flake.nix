@@ -2,30 +2,32 @@
   description = "DarkAir's Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # use mirror of nixpkgs ot replace official nixpkgs, but init may be too slow
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
 
-    nixos-hardware.url = "github:nixos/nixos-hardware";
-    impermanence.url = "github:nix-community/impermanence";
+    nixos-hardware.url = "git+https://github.com/nixos/nixos-hardware.git?shallow=1&ref=master";
+    impermanence.url = "git+https://github.com/nix-community/impermanence.git?shallow=1&ref=master";
 
-    lanzaboote.url = "github:nix-community/lanzaboote";
+    lanzaboote.url = "git+https://github.com/nix-community/lanzaboote.git?shallow=1&ref=master";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
+    aagl.url = "git+https://github.com/ezKEa/aagl-gtk-on-nix.git?shallow=1&ref=main";
     aagl.inputs.nixpkgs.follows = "nixpkgs";
 
-    flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
+    flake-programs-sqlite.url = "git+https://github.com/wamserma/flake-programs-sqlite.git?shallow=1&ref=main";
     flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
 
-    firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme";
+    firefox-gnome-theme.url = "git+https://github.com/rafaelmardojai/firefox-gnome-theme.git?shallow=1&ref=master";
     firefox-gnome-theme.flake = false;
 
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions.url = "git+https://github.com/nix-community/nix-vscode-extensions.git?shallow=1&ref=master";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.url = "git+https://github.com/Gerg-L/spicetify-nix.git?shallow=1&ref=master";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
