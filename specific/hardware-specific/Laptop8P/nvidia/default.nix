@@ -1,9 +1,8 @@
 _: {
-  imports =
-    [
-      ./open.nix
-      ./cuda.nix
-      # Proprietary
-      # ./nvidia.nix
-    ];
+  imports = [
+    ./open.nix
+    ./cuda.nix
+    # Proprietary
+    # ./nvidia.nix
+  ];
 }

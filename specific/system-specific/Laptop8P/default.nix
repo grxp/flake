@@ -4,7 +4,9 @@
   # networking.networkmanager.wifi.powersave = false; # disabled power save mode for most driver to keep network stable
   networking.networkmanager.wifi.backend = "iwd"; # Or Default:wpa_supplicant
   networking.wireless.iwd.settings = {
-    DriverQuirks = { PowerSaveDisable = "mt7921e"; };
+    DriverQuirks = {
+      PowerSaveDisable = "mt7921e";
+    };
   };
 
   networking.hostName = "Laptop8P"; # Define hostname.

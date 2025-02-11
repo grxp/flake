@@ -23,43 +23,43 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, ... }:
+  outputs =
+    inputs@{ nixpkgs, ... }:
     {
-      nixosConfigurations =
-        {
-          gnome = nixpkgs.lib.nixosSystem rec {
-            system = "x86_64-linux";
-            specialArgs = {
-              inherit inputs system;
-              user = "nixos";
-            };
-            modules = with inputs;[
-              "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
-              ./livecd.nix
-              # ../HM
-              home-manager.nixosModules.home-manager
-              aagl.nixosModules.default
-              daeuniverse.nixosModules.daed
-              flake-programs-sqlite.nixosModules.programs-sqlite
-              { nixpkgs.config.allowUnfree = true; }
-            ];
+      nixosConfigurations = {
+        gnome = nixpkgs.lib.nixosSystem rec {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs system;
+            user = "nixos";
           };
-          # plasma6 = nixpkgs.lib.nixosSystem
-          #   rec {
-          #     system = "x86_64-linux";
-          #     specialArgs = {
-          #       inherit inputs system;
-          #       user = "nixos";
-          #     };
-          #     modules = with inputs;[
-          #       "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-plasma6.nix"
-          #       home-manager.nixosModules.home-manager
-          #       aagl.nixosModules.default
-          #       daeuniverse.nixosModules.daed
-          #       flake-programs-sqlite.nixosModules.programs-sqlite
-          #       { nixpkgs.config.allowUnfree = true; }
-          #     ];
-          #   };
+          modules = with inputs; [
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
+            ./livecd.nix
+            # ../HM
+            home-manager.nixosModules.home-manager
+            aagl.nixosModules.default
+            daeuniverse.nixosModules.daed
+            flake-programs-sqlite.nixosModules.programs-sqlite
+            { nixpkgs.config.allowUnfree = true; }
+          ];
         };
+        # plasma6 = nixpkgs.lib.nixosSystem
+        #   rec {
+        #     system = "x86_64-linux";
+        #     specialArgs = {
+        #       inherit inputs system;
+        #       user = "nixos";
+        #     };
+        #     modules = with inputs;[
+        #       "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-plasma6.nix"
+        #       home-manager.nixosModules.home-manager
+        #       aagl.nixosModules.default
+        #       daeuniverse.nixosModules.daed
+        #       flake-programs-sqlite.nixosModules.programs-sqlite
+        #       { nixpkgs.config.allowUnfree = true; }
+        #     ];
+        #   };
+      };
     };
 }

@@ -1,7 +1,8 @@
-{ inputs
-, user
-, system
-, ...
+{
+  inputs,
+  user,
+  system,
+  ...
 }:
 {
   # Nixpkgs Allow packages

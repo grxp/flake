@@ -1,7 +1,8 @@
-{ pkgs
-, inputs
-, config
-, ...
+{
+  pkgs,
+  inputs,
+  config,
+  ...
 }:
 let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
@@ -30,7 +31,7 @@ in
     (config.programs.spicetify.spicedSpotify.overrideAttrs (oldAttrs: {
       postInstall =
         oldAttrs.postInstall or ""
-          + ''
+        + ''
           wrapProgram $out/bin/${oldAttrs.meta.mainProgram} \
             --add-flags "--enable-wayland-ime"
         '';

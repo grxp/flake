@@ -1,5 +1,5 @@
 {
-  # Enable Wayland for NixOS 
+  # Enable Wayland for NixOS
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   # Enable Wayland for Chromium (CEF) Apps using home-manger
   # home.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -10,8 +10,9 @@
   nixpkgs.overlays = [
     (self: super: {
       mutter = super.mutter.overrideAttrs (oldAttrs: {
-        patches = oldAttrs.patches or [ ]
-          ++ [ ./wayland-text-input-v1-Implement-basic-text-input-v1-.patch ];
+        patches = oldAttrs.patches or [ ] ++ [
+          ./wayland-text-input-v1-Implement-basic-text-input-v1-.patch
+        ];
       });
     })
   ];

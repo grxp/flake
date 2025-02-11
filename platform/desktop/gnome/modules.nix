@@ -1,8 +1,9 @@
-{ pkgs
-, lib
-, options
-, user
-, ...
+{
+  pkgs,
+  lib,
+  options,
+  user,
+  ...
 }:
 {
   config =
