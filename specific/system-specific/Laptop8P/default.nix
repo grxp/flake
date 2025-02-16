@@ -18,7 +18,7 @@
     ./plymouth.nix
     ./btrfs-scrub.nix
     ./hardware-configuration.nix
-    ./persistence.nix
+   # ./persistence.nix
     #  ./patch
   ];
 }

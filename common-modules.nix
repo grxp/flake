@@ -9,11 +9,11 @@
   ./specific/system-specific/Laptop8P
   ./specific/hardware-specific/Laptop8P
   ./specific/user-specific
-  ./lanzaboote.nix
+ # ./lanzaboote.nix
   ./home-manager.nix
 
   inputs.nixos-hardware.nixosModules.omen-16-n0005ne
-  inputs.impermanence.nixosModules.impermanence
+  #inputs.impermanence.nixosModules.impermanence
   inputs.lanzaboote.nixosModules.lanzaboote
   inputs.home-manager.nixosModules.home-manager
   inputs.aagl.nixosModules.default

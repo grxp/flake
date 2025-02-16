@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    android-studio
+   # android-studio
     (google-chrome.override {
       commandLineArgs = [
         "--enable-features=AcceleratedVideoEncoder,VaapiOnNvidiaGPUs,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
@@ -15,7 +15,7 @@
     brave
     tdesktop
     qq
-    wechat-uos
+  #  wechat-uos
     thunderbird
     netease-cloud-music-gtk
     vlc

@@ -41,21 +41,21 @@
 
   boot.initrd.luks.devices."lvm-encrypted".device = "/dev/mapper/lvm-lvol0";
 
-  fileSystems."/" = {
-    device = "none";
-    fsType = "tmpfs";
-    options = [
-      "defaults"
-      "size=25%"
-      "mode=755"
-    ];
-  };
+#  fileSystems."/" = {
+#    device = "none";
+#    fsType = "tmpfs";
+#    options = [
+#      "defaults"
+#      "size=25%"
+#      "mode=755"
+#    ];
+#  };
 
-  # fileSystems."/" = {
-  #   device = "/dev/mapper/lvm-encrypted";
-  #   fsType = "btrfs";
-  #   options = [ "subvol=root" "compress=zstd" ];
-  # };
+    fileSystems."/" = {
+      device = "/dev/mapper/lvm-encrypted";
+      fsType = "btrfs";
+      options = [ "subvol=root" "compress=zstd" ];
+    };
 
   fileSystems."/home" = {
     device = "/dev/mapper/lvm-encrypted";
@@ -78,16 +78,16 @@
     ];
   };
 
-  fileSystems."/persistent" = {
-    device = "/dev/mapper/lvm-encrypted";
-    fsType = "btrfs";
-    options = [
-      "subvol=root"
-      "compress=zstd"
-      "discard=async"
-    ];
-    neededForBoot = true;
-  };
+ # fileSystems."/persistent" = {
+ #   device = "/dev/mapper/lvm-encrypted";
+ #   fsType = "btrfs";
+ #   options = [
+ #     "subvol=root"
+ #     "compress=zstd"
+ #     "discard=async"
+ #   ];
+ #   neededForBoot = true;
+ # };
 
   # fileSystems."/swap" = {
   #   device = "/dev/mapper/lvm-encrypted";
