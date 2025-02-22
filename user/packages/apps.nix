@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    android-studio
+    # android-studio
     (google-chrome.override {
       commandLineArgs = [
         "--enable-features=AcceleratedVideoEncoder,VaapiOnNvidiaGPUs,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
@@ -15,20 +15,14 @@
     brave
     tdesktop
     qq
-    wechat-uos
+    # wechat-uos
     thunderbird
-    netease-cloud-music-gtk
+    # netease-cloud-music-gtk
     vlc
-    (mpv-unwrapped.wrapper {
-      mpv = mpv-unwrapped.override { cddaSupport = true; };
-    })
+    mpv
     tsukimi
-    bottles
+    # bottles
     obsidian
-    burpsuite
-    # wpsoffice-cn
-    virt-manager
-    flameshot
-    dconf-editor
+    # burpsuite
   ];
 }

@@ -1,5 +1,8 @@
 { lib, ... }:
 {
+  # Reserve one core to prevent the system from freezing
+  nix.settings.cores = 15;
+
   nix.settings = {
     experimental-features = [
       "nix-command"

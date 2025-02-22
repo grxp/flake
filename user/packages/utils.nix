@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     fastfetch
     btop
-    nvtopPackages.full
+    # nvtopPackages.full
     lolcat
     difftastic
     yazi
@@ -18,9 +18,8 @@
     fd
     ripgrep
     openssl
-    tldr
+    tlrc
     unzip
-    starship
     nixfmt-rfc-style
     p7zip
     wine

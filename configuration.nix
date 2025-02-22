@@ -1,66 +1,53 @@
 # Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
-    ./modules/sysctl.nix
-    ./modules/i18n.nix
-    ./modules/ssh.nix
-    ./modules/shell.nix
-    ./modules/nix.nix
-    # modules/features
-    ./packages
-    ./packages/gaming.nix
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./specific
+    ./modules
     ./user
   ];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.docker.enable = true;
 
-  # Run unpatched dynamic binaries on NixOS
-  programs.nix-ld.enable = true;
-
-  # Use the systemd-boot EFI boot loader.
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.consoleMode = lib.mkDefault "auto";
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 180;
-  boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
 
-  # May cause problems with systemd timer
-  # time.hardwareClockInLocalTime = true;
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "cn";
+    variant = "";
+  };
 
-  # Using Tmpfs for /tmp to speed up the system
-  # If you have less memory, this can cause Nix builds to fail
-  boot.tmp.useTmpfs = true;
-  # You can choose whether to clean /tmp on boot, but this is not necessary for Tmpfs
-  # boot.tmp.cleanOnBoot = true;
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
 
-  # Don't allow mutation of users outside of the config.
-  users.mutableUsers = false;
+  # List services that you want to enable:
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
 
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.05"; # Did you read the comment?
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "24.11"; # Did you read the comment?
+
 }
