@@ -10,6 +10,9 @@
     firefox-gnome-theme.url = "git+https://github.com/rafaelmardojai/firefox-gnome-theme.git?shallow=1&ref=master";
     firefox-gnome-theme.flake = false;
 
+    flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
+    flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   outputs =
@@ -23,6 +26,7 @@
         };
         modules = with inputs; [
           ./configuration.nix
+          flake-programs-sqlite.nixosModules.programs-sqlite
           home-manager.nixosModules.home-manager
           {
             nixpkgs.config.allowUnfree = true;

@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
@@ -38,6 +37,7 @@
     options = [
       "subvol=root"
       "compress=zstd"
+      "discard=async"
     ];
   };
 
