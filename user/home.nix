@@ -2,6 +2,7 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ./env.nix
     ./packages/apps.nix
     ./packages/utils.nix
     ./programs

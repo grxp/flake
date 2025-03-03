@@ -14,9 +14,9 @@
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       # So also install non-variable version
-      # source-han-sans
-      # source-han-serif
-      # source-han-mono
+      source-han-sans
+      source-han-serif
+      source-han-mono
       # Monospace fonts
       # fira-code
       # fira-code-symbols

@@ -20,6 +20,7 @@
     gcc
     gdb
     python3
+    nodejs
   ];
   programs.adb.enable = true;
 }
