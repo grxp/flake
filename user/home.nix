@@ -6,6 +6,7 @@
     ./packages/apps.nix
     ./packages/utils.nix
     ./programs
+    # ./shell.nix
   ];
 
   programs.mangohud.enable = true;

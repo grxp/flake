@@ -8,5 +8,6 @@
     ./nvidia.nix
     ./shell.nix
     ./sysctl.nix
+    ./gaming.nix
   ];
 }

@@ -7,6 +7,7 @@
 {
   imports = [
     # Include the results of the hardware scan.
+    # ./modules/zfs.nix
     ./hardware-configuration.nix
     ./specific
     ./modules
