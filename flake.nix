@@ -13,6 +13,7 @@
     flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
     flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
 
+    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
   };
 
   outputs =
@@ -28,6 +29,7 @@
           ./configuration.nix
           flake-programs-sqlite.nixosModules.programs-sqlite
           home-manager.nixosModules.home-manager
+          # aagl.nixosModules.default
           {
             nixpkgs.config.allowUnfree = true;
 
