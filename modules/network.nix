@@ -41,8 +41,8 @@
     pkgs.dae
   ];
 
-  services.dae.enable = true;
-  services.dae.configFile = "/etc/dae/config.dae";
+  # services.dae.enable = true;
+  # services.dae.configFile = "/etc/dae/config.dae";
   programs.clash-verge.enable = true;
 
 }
