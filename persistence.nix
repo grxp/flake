@@ -3,7 +3,6 @@
     hideMounts = true;
     directories = [
       "/etc/NetworkManager/system-connections"
-      "/etc/daed"
       "/etc/nixos"
       "/var/log"
       "/var/lib"

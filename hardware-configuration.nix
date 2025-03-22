@@ -32,6 +32,27 @@
   boot.initrd.luks.devices."lvm-encrypted".device = "/dev/mapper/lvm-lvol0";
 
   fileSystems."/" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [
+      "defaults"
+      "size=25%"
+      "mode=755"
+    ];
+  };
+
+  fileSystems."/persistent" = {
+    device = "/dev/mapper/lvm-encrypted";
+    neededForBoot = true;
+    fsType = "btrfs";
+    options = [
+      "subvol=persistent"
+      "compress=zstd"
+      "discard=async"
+    ];
+  };
+
+  fileSystems."/root" = {
     device = "/dev/mapper/lvm-encrypted";
     fsType = "btrfs";
     options = [

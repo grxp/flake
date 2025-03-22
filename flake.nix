@@ -2,12 +2,13 @@
   description = "A simple NixOS flake";
 
   inputs = {
-    nixpkgs.url = "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager.url = "git+https://github.com/nix-community/home-manager.git?shallow=1&ref=master";
+    impermanence.url = "github:nix-community/impermanence";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    firefox-gnome-theme.url = "git+https://github.com/rafaelmardojai/firefox-gnome-theme.git?shallow=1&ref=master";
+    firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme";
     firefox-gnome-theme.flake = false;
 
     flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
@@ -27,9 +28,10 @@
         };
         modules = with inputs; [
           ./configuration.nix
+          impermanence.nixosModules.impermanence
           flake-programs-sqlite.nixosModules.programs-sqlite
           home-manager.nixosModules.home-manager
-          # aagl.nixosModules.default
+          aagl.nixosModules.default
           {
             nixpkgs.config.allowUnfree = true;
 
