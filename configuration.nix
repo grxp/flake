@@ -23,6 +23,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # LINUX kernel.
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "cn";
