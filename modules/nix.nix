@@ -17,7 +17,7 @@
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store"
       "https://nix-community.cachix.org"
-      "https://cache.garnix.io"
+      # "https://cache.garnix.io"
     ];
     trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -32,7 +32,7 @@
   nix.gc = {
     automatic = true;
     dates = "daily";
-    options = "--delete-older-than 2d";
+    options = "--delete-older-than 1d";
   };
 
 }
