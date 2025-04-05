@@ -24,5 +24,18 @@
     # bottles
     obsidian
     # burpsuite
+    (lutris.override {
+      extraPkgs = pkgs: [
+        # List package dependencies here
+        wineWowPackages.stable
+        wineWowPackages.waylandFull
+        pixman
+        libjpeg
+        zenity
+        winetricks
+        umu-launcher
+      ];
+    })
+    umu-launcher
   ];
 }
