@@ -27,6 +27,7 @@
     "nowatchdog"
     "zswap.enabled=1"
     "zswap.shrinker_enabled=1"
+    "amd_pstate=active"
   ];
 
   boot.initrd.luks.devices."lvm-encrypted".device = "/dev/mapper/lvm-lvol0";
