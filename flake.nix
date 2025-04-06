@@ -28,13 +28,12 @@
         };
         modules = with inputs; [
           ./configuration.nix
+          ./nixpkgs.nix
           impermanence.nixosModules.impermanence
           flake-programs-sqlite.nixosModules.programs-sqlite
           home-manager.nixosModules.home-manager
           aagl.nixosModules.default
           {
-            nixpkgs.config.allowUnfree = true;
-
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.darkair = import ./user/home.nix;
