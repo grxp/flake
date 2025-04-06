@@ -24,4 +24,6 @@
   ];
   programs.adb.enable = true;
   programs.wireshark.enable = true;
+  programs.virt-manager.enable = true;
+  programs.trippy.enable = true;
 }
