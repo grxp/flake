@@ -23,6 +23,9 @@
     tsukimi
     # bottles
     obsidian
+    wireshark-qt
+    qcm
+    vscode
     # burpsuite
     (lutris.override {
       extraPkgs = pkgs: [

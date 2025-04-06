@@ -21,6 +21,10 @@
   programs.direnv.nix-direnv.enable = true;
 
   programs.java.enable = true;
+  programs.lazygit = {
+    enable = true;
+    settings.git.paging.externalDiffCommand = "difft";
+  };
 
   home.stateVersion = "24.11";
 }
