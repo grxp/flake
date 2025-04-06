@@ -1,7 +1,7 @@
 {
   imports = [
-    ./Plasma.nix
-    # ./gnome
+    # ./Plasma.nix
+    ./gnome
     ./pipewire.nix
   ];
   # Enable the X11 windowing system.
