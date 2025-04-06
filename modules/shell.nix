@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  # programs.fish.enable = true;
+  programs.fish.enable = true;
   programs.zsh.enable = true;
   # programs.zsh.enableCompletion = false;
   users.users.darkair.shell = "/run/current-system/sw/bin/fish";

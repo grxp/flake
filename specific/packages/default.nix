@@ -12,6 +12,7 @@
     tmux
     smartmontools
     dnsutils
+    trippy
     q
     dogdns
     clang

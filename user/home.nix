@@ -1,6 +1,8 @@
 {
   programs.home-manager.enable = true;
 
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
+
   imports = [
     ./env.nix
     ./packages/apps.nix
