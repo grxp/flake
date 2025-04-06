@@ -5,7 +5,7 @@
     ./i18n.nix
     ./network.nix
     ./nix.nix
-    ./nvidia.nix
+    ./graphics.nix
     ./shell.nix
     ./sysctl.nix
     ./gaming.nix

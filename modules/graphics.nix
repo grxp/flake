@@ -1,6 +1,12 @@
 {
+  hardware.amdgpu.initrd.enable = true;
   hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.graphics.enable32Bit = true;
+
+  services.xserver.videoDrivers = [
+    "nvidia"
+    "modesetting"
+  ];
 
   hardware.nvidia.open = true;
   hardware.nvidia.dynamicBoost.enable = true; # Power limit
