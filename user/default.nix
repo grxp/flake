@@ -11,8 +11,5 @@
       "wireshark"
       "wheel"
     ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
   };
 }
