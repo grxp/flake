@@ -19,6 +19,7 @@
             gnome-tweaks
             dconf-editor
             gnome-power-manager
+            gnome-pomodoro
           ])
           ++ (with pkgs.gnomeExtensions; [
             appindicator
@@ -27,6 +28,7 @@
             dock-from-dash
             astra-monitor
             kimpanel
+            pano
             # Extensions that no longer in use
             # openweather
             # tiling-assistant
