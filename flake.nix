@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     impermanence.url = "github:nix-community/impermanence";
     home-manager.url = "github:nix-community/home-manager";
@@ -19,12 +20,18 @@
 
   outputs =
     { self, nixpkgs, ... }@inputs:
+    let
+      user = "darkair";
+    in
     {
-      nixosConfigurations.Laptop8P = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.Laptop8P = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         specialArgs = {
-          inherit inputs;
-          user = "darkair";
+          inherit inputs user system;
+          pkgs-stable = import inputs.nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
         modules = with inputs; [
           ./configuration.nix
