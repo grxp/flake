@@ -16,6 +16,7 @@
     flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
 
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
+    lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
   };
 
   outputs =
@@ -40,6 +41,7 @@
           flake-programs-sqlite.nixosModules.programs-sqlite
           home-manager.nixosModules.home-manager
           aagl.nixosModules.default
+          lanzaboote.nixosModules.lanzaboote
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

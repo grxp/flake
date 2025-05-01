@@ -13,6 +13,7 @@
     ./specific
     ./modules
     ./user
+    ./scureboot.nix
   ];
 
   virtualisation.libvirtd.enable = true;
