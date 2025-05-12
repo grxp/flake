@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     fastfetch
     btop
-    # nvtopPackages.full
+    nvtopPackages.full
     lolcat
     difftastic
     yazi

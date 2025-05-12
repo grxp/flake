@@ -9,8 +9,8 @@
   config =
     {
       # Enable the Deepin Desktop Environment.
-      services.xserver.displayManager.gdm.enable = true;
-      services.xserver.desktopManager.gnome.enable = true;
+      services.displayManager.gdm.enable = true;
+      services.desktopManager.gnome.enable = true;
     }
     // lib.optionalAttrs (options ? "home-manager") {
       home-manager.users.${user} = {

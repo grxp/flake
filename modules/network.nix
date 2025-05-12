@@ -12,29 +12,30 @@
 
   networking.hostName = "Laptop8P"; # Define hostname.
   networking.nftables.enable = true;
-  # systemd.services.daed = {
-  #   wantedBy = [ "multi-user.target" ];
-  #   after = [
-  #     "network-online.target"
-  #     "systemd-sysctl.service"
-  #   ];
-  #   wants = [ "network-online.target" ];
-  #
-  #   preStart = ''
-  #     umask 0077
-  #     mkdir -p /etc/daed
-  #     ln -sfn ${pkgs.v2ray-geoip}/share/v2ray/geoip.dat /etc/daed/
-  #     ln -sfn ${pkgs.v2ray-domain-list-community}/share/v2ray/geosite.dat /etc/daed/
-  #   '';
-  #   serviceConfig = {
-  #     Type = "simple";
-  #     User = "root";
-  #     LimitNPROC = 512;
-  #     LimitNOFILE = 1048576;
-  #     ExecStart = "${pkgs.daed}/bin/daed run -c /etc/daed -l 127.0.0.1:2023";
-  #     Restart = "on-abnormal";
-  #   };
-  # };
+
+  systemd.services.daed = {
+    wantedBy = [ "multi-user.target" ];
+    after = [
+      "network-online.target"
+      "systemd-sysctl.service"
+    ];
+    wants = [ "network-online.target" ];
+
+    preStart = ''
+      umask 0077
+      mkdir -p /etc/daed
+      ln -sfn ${pkgs.v2ray-geoip}/share/v2ray/geoip.dat /etc/daed/
+      ln -sfn ${pkgs.v2ray-domain-list-community}/share/v2ray/geosite.dat /etc/daed/
+    '';
+    serviceConfig = {
+      Type = "simple";
+      User = "root";
+      LimitNPROC = 512;
+      LimitNOFILE = 1048576;
+      ExecStart = "${pkgs.daed}/bin/daed run -c /etc/daed -l 127.0.0.1:2023";
+      Restart = "on-abnormal";
+    };
+  };
 
   environment.systemPackages = [
     pkgs.daed

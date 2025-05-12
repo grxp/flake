@@ -4,6 +4,7 @@
     directories = [
       "/etc/NetworkManager/system-connections"
       "/etc/nixos"
+      "/etc/daed"
       "/var/log"
       "/var/lib"
     ];

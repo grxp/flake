@@ -23,10 +23,18 @@
     gdb
     python3
     nodejs
+    # neovim
+    ghostscript
+    mermaid-cli
+    tectonic
   ];
-  programs.adb.enable = true;
-  programs.wireshark.enable = true;
-  programs.virt-manager.enable = true;
-  programs.trippy.enable = true;
-  programs.nexttrace.enable = true;
+
+  programs = {
+    adb.enable = true;
+    wireshark.enable = true;
+    virt-manager.enable = true;
+    trippy.enable = true;
+    nexttrace.enable = true;
+  };
+
 }
