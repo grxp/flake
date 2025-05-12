@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   home.pointerCursor = {
-    package = pkgs.libsForQt5.breeze-qt5;
-    name = "breeze_cursors";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
     gtk.enable = true;
   };
 

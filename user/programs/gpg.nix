@@ -6,7 +6,7 @@
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
-    pinentryPackage = osConfig.programs.gnupg.agent.pinentryPackage;
+    pinentry.package = osConfig.programs.gnupg.agent.pinentryPackage;
   };
 
   # Disable gnome-keyring-ssh
