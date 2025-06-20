@@ -17,12 +17,21 @@
   ];
 
   virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-  programs.nix-ld.enable = true;
+
+  programs = {
+    virt-manager.enable = true;
+    nix-ld.enable = true;
+    command-not-found.enable = true;
+    fish.enable = true;
+  };
+
+  users.users.root.shell = pkgs.fish;
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
   # LINUX kernel.
   boot.kernelPackages = pkgs.linuxPackages_zen;

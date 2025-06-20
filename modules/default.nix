@@ -6,7 +6,6 @@
     ./network.nix
     ./nix.nix
     ./graphics.nix
-    ./shell.nix
     ./sysctl.nix
     ./gaming.nix
   ];
