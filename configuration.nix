@@ -33,6 +33,9 @@
     variant = "";
   };
 
+  programs.fish.enable = true;
+  users.users.root.shell = pkgs.fish;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
