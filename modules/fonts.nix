@@ -20,11 +20,11 @@
       # Monospace fonts
       fira-code
       fira-code-symbols
-      nerd-fonts.fira-code
       cascadia-code
       jetbrains-mono
       nerd-fonts.jetbrains-mono
-      nerd-fonts.droid-sans-mono
+      nerd-fonts.fira-code
+      # nerd-fonts.droid-sans-mono
       # Some unused fonts
       # Inter font
       # inter
@@ -44,8 +44,9 @@
       defaultFonts = {
         sansSerif = [
           # Main Sans-Serif Font
-          # "lxgw wenkai screen"
           "Cantarell"
+          "Noto Sans"
+          "lxgw wenkai screen"
           # CJK Fallback
           "Noto Sans CJK SC"
           "Noto Sans CJK TC"
@@ -67,7 +68,9 @@
         ];
         monospace = [
           # Main Mono Font
-          # "Cascadia Code"
+          "Cascadia Code"
+          "Cascadia Code NF"
+          "Fira Code"
           "JetBrainsMono"
           # CJK Fallback
           "Noto Sans Mono CJK SC"
