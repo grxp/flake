@@ -44,8 +44,8 @@
       defaultFonts = {
         sansSerif = [
           # Main Sans-Serif Font
-          # "lxgw wenkai screen"
           "Cantarell"
+          "lxgw wenkai screen"
           # CJK Fallback
           "Noto Sans CJK SC"
           "Noto Sans CJK TC"
@@ -67,7 +67,7 @@
         ];
         monospace = [
           # Main Mono Font
-          # "Cascadia Code"
+          "Cascadia Code"
           "JetBrainsMono"
           # CJK Fallback
           "Noto Sans Mono CJK SC"

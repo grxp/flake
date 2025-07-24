@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     # android-studio
     # zed-editor
-    anki
+    anki-bin
     (google-chrome.override {
       commandLineArgs = [
         "--enable-features=AcceleratedVideoEncoder,VaapiOnNvidiaGPUs,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
@@ -17,7 +17,7 @@
     brave
     tdesktop
     qq
-    # wechat-uos
+    wechat-uos
     thunderbird
     # netease-cloud-music-gtk
     vlc
@@ -42,6 +42,7 @@
       ];
     })
     umu-launcher
+    prismlauncher
     netease-cloud-music-gtk
   ];
 }
