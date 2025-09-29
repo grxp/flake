@@ -14,10 +14,8 @@
       extraPackages = with pkgs; [ nvidia-vaapi-driver ];
     };
     nvidia = {
-      nvidiaPersistenced = true;
       open = true;
       dynamicBoost.enable = true;
-      modesetting.enable = true;
     };
   };
 

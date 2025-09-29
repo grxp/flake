@@ -1,5 +1,13 @@
 { pkgs, ... }:
 {
+  programs = {
+    adb.enable = true;
+    wireshark.enable = true;
+    virt-manager.enable = true;
+    trippy.enable = true;
+    nexttrace.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     tree
     wget
@@ -23,18 +31,5 @@
     gdb
     python3
     nodejs
-    # neovim
-    ghostscript
-    mermaid-cli
-    tectonic
   ];
-
-  programs = {
-    adb.enable = true;
-    wireshark.enable = true;
-    virt-manager.enable = true;
-    trippy.enable = true;
-    nexttrace.enable = true;
-  };
-
 }

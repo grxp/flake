@@ -1,9 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # android-studio
-    # zed-editor
-    anki-bin
+    anki
     tdesktop
     qq
     wechat-uos
@@ -12,12 +10,10 @@
     vlc
     mpv
     tsukimi
-    # bottles
     obsidian
     wireshark-qt
     qcm
     vscode
-    # burpsuite
     umu-launcher
     prismlauncher
   ];
