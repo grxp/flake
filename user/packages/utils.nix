@@ -27,5 +27,14 @@
     clang-tools
     any-nix-shell
     amdgpu_top
+    # Kubernetes
+    kubectl
+    kubectx
+    kubernetes-helm
+    helmfile
+    k9s
+    cilium-cli
+    hubble
+    argocd
   ];
 }

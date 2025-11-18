@@ -31,5 +31,6 @@
     gdb
     python3
     nodejs
+    pnpm
   ];
 }

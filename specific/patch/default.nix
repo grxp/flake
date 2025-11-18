@@ -6,9 +6,9 @@ let
   };
 in
 {
-  boot.extraModulePackages = [
-    (fix-led.overrideAttrs (_: {
-      patches = [ ./patches/hp_omen_mute_led_patch.patch ];
-    }))
-  ];
+  # boot.extraModulePackages = [
+  #   (fix-led.overrideAttrs (_: {
+  #     patches = [ ./patches/hp_omen_mute_led_patch.patch ];
+  #   }))
+  # ];
 }
