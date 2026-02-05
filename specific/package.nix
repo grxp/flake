@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   programs = {
-    adb.enable = true;
     wireshark.enable = true;
     virt-manager.enable = true;
     trippy.enable = true;
@@ -9,6 +8,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # Android
+    android-tools
+
     tree
     wget
     axel
@@ -22,8 +24,10 @@
     smartmontools
     dnsutils
     trippy
+    # DNS tools
     q
-    dogdns
+    doggo
+    # Program lang
     clang
     go
     rustup

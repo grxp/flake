@@ -21,7 +21,6 @@
   programs = {
     virt-manager.enable = true;
     nix-ld.enable = true;
-    command-not-found.enable = true;
     fish.enable = true;
   };
 

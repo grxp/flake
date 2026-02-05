@@ -1,15 +1,14 @@
 {
-  services.btrfs.autoScrub = {
-    enable = true;
-    interval = "monthly";
-  };
+  # services.btrfs.autoScrub = {
+  #   enable = true;
+  #   interval = "monthly";
+  # };
 
   imports = [
     ./desktop
-    ./packages
+    ./package.nix
     ./fix-keycode.nix
     ./udev.nix
     ./plymouth.nix
-    ./patch
   ];
 }

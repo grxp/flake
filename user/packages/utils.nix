@@ -20,7 +20,7 @@
     openssl
     tlrc
     unzip
-    nixfmt-rfc-style
+    nixfmt
     p7zip
     wine
     winetricks
