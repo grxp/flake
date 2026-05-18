@@ -10,5 +10,6 @@
     ./fix-keycode.nix
     ./udev.nix
     ./plymouth.nix
+    ./patch
   ];
 }

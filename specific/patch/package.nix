@@ -1,41 +1,28 @@
-{
-  pkgs,
-  lib,
-  kernel ? pkgs.linuxPackages_latest.kernel,
-}:
+{ lib, stdenv, kernel, kernelModuleMakeFlags }:
 
-pkgs.stdenv.mkDerivation {
+let
+  modulePath = "sound/hda/codecs/realtek";
+in
+stdenv.mkDerivation {
   pname = "fix-led";
-  inherit (kernel)
-    src
-    version
-    postPatch
-    nativeBuildInputs
-    ;
+  inherit (kernel) src version;
 
-  kernel_dev = kernel.dev;
-  kernelVersion = kernel.modDirVersion;
+  nativeBuildInputs = kernel.moduleBuildDependencies;
 
-  modulePath = "sound/pci/hda";
+  patches = [ ./patches/hp_omen_mute_led_patch.patch ];
 
-  buildPhase = ''
-    BUILT_KERNEL=$kernel_dev/lib/modules/$kernelVersion/build
+  hardeningDisable = [ "pic" ];
+  enableParallelBuilding = true;
 
-    cp $BUILT_KERNEL/Module.symvers .
-    cp $BUILT_KERNEL/.config        .
-    cp $kernel_dev/vmlinux          .
+  makeFlags = kernelModuleMakeFlags ++ [
+    "-C"
+    "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
+    "M=$(PWD)/${modulePath}"
+  ];
 
-    make "-j$NIX_BUILD_CORES" modules_prepare
-    make "-j$NIX_BUILD_CORES" M=$modulePath modules
-  '';
-
-  installPhase = ''
-    make \
-      INSTALL_MOD_PATH="$out" \
-      XZ="xz -T$NIX_BUILD_CORES" \
-      M="$modulePath" \
-      modules_install
-  '';
+  buildFlags = [ "modules" ];
+  installFlags = [ "INSTALL_MOD_PATH=${placeholder "out"}" ];
+  installTargets = [ "modules_install" ];
 
   meta = {
     description = "fix-led";
