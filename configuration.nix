@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, programs-sqlite, ... }:
 
 {
   imports = [
@@ -21,6 +21,10 @@
   programs = {
     virt-manager.enable = true;
     nix-ld.enable = true;
+    command-not-found = {
+      enable = true;
+      dbPath = lib.mkForce programs-sqlite;
+    };
     fish.enable = true;
   };
 
@@ -32,6 +36,9 @@
 
   # LINUX kernel.
   boot.kernelPackages = pkgs.linuxPackages_zen;
+
+  # Sof firmware
+  hardware.firmware = [ pkgs.sof-firmware ];
 
   # Configure keymap in X11
   services.xserver.xkb = {

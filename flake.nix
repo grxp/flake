@@ -12,8 +12,8 @@
     firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme";
     firefox-gnome-theme.flake = false;
 
-    nix-index-database.url = "github:nix-community/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
+    flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
 
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
     lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
@@ -33,13 +33,13 @@
             inherit system;
             config.allowUnfree = true;
           };
+          programs-sqlite = inputs.flake-programs-sqlite.packages.${system}.programs-sqlite;
         };
         modules = with inputs; [
           ./configuration.nix
           ./nixpkgs.nix
           impermanence.nixosModules.impermanence
           home-manager.nixosModules.home-manager
-          nix-index-database.nixosModules.nix-index
           aagl.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
           {
