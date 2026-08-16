@@ -1,12 +1,15 @@
-{ inputs, lib, ... }:
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
 let
   profile = "default";
 in
 {
-  home.file.".mozilla/firefox/${profile}/chrome/firefox-gnome-theme".source =
-    inputs.firefox-gnome-theme;
-
   programs.firefox = {
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     enable = true;
     profiles.${profile} = {
       extraConfig = ''
@@ -29,5 +32,9 @@ in
         @import "firefox-gnome-theme/userContent.css;
       '';
     };
+
   };
+
+  home.file."${config.xdg.configHome}/mozilla/firefox/${profile}/chrome/firefox-gnome-theme".source =
+    inputs.firefox-gnome-theme;
 }

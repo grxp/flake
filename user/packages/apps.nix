@@ -3,19 +3,19 @@
   home.packages = with pkgs; [
     anki
     telegram-desktop
-    qq
-    wechat-uos
+    # qq
+    # wechat-uos
     thunderbird
     netease-cloud-music-gtk
     vlc
     mpv
     tsukimi
     obsidian
-    wireshark-qt
+    # wireshark-qt
     # qcm
     vscode
-    umu-launcher
-    prismlauncher
+    # umu-launcher
+    # prismlauncher
   ];
   # programs.obs-studio = {
   #   enable = true;

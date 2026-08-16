@@ -16,7 +16,7 @@
     ./scureboot.nix
   ];
 
-  virtualisation.libvirtd.enable = true;
+  # virtualisation.libvirtd.enable = true;
 
   programs = {
     virt-manager.enable = true;
@@ -25,7 +25,6 @@
       enable = true;
       dbPath = lib.mkForce programs-sqlite;
     };
-    fish.enable = true;
   };
 
   # Bootloader.
@@ -38,7 +37,7 @@
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Sof firmware
-  hardware.firmware = [ pkgs.sof-firmware ];
+  # hardware.firmware = [ pkgs.sof-firmware ];
 
   # Configure keymap in X11
   services.xserver.xkb = {

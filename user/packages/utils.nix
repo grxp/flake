@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     fastfetch
     btop
-    nvtopPackages.full
+    nvtopPackages.nvidia
     lolcat
     difftastic
     yazi
@@ -28,13 +28,13 @@
     any-nix-shell
     amdgpu_top
     # Kubernetes
-    kubectl
-    kubectx
-    kubernetes-helm
-    helmfile
-    k9s
-    cilium-cli
-    hubble
-    argocd
+    # kubectl
+    # kubectx
+    # kubernetes-helm
+    # helmfile
+    # k9s
+    # cilium-cli
+    # hubble
+    # argocd
   ];
 }
